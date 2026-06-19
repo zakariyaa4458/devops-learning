@@ -137,11 +137,9 @@ This confirmed that only the ALB could communicate with the EC2 instances.
 
 Include screenshots of:
 
-1. EC2 Instances running.
-2. Server 1 webpage.
-3. Server 2 webpage.
-4. Target Group showing healthy targets.
-5. Application Load Balancer configuration.
-6. ALB DNS page displaying Server 1 and Server 2.
-7. Security Group configuration showing HTTP access restricted to the ALB Security Group.
+1. Server 1 webpage.
+2. Server 2 webpage.
+3. Target Group showing healthy targets.
+4. Application Load Balancer configuration.
+5. Timeout screen when trying to connect directly to the EC2 instance 
 
