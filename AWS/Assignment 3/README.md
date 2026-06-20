@@ -164,7 +164,7 @@ The request could not be satisfied.
 - Integrate CI/CD deployment using GitHub Actions.
 
 ## Screenshots 
-- AWS portfolio screen after secured with HTTPS
-- AWS portfolio screen before it was given the domain name
-- Settings of the Cloudfront CDN 
-- S3 bucket and the files in it
+- AWS portfolio screen served over HTTPS using a custome domain.
+- AWS portfolio screen deployment using the Cloudfront domain name.
+- Setting of the Cloudfront CDN.
+- S3 bucket and the hosted website files in it.
