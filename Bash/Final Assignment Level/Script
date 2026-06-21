@@ -1,0 +1,65 @@
+#!/bin/bash 
+
+mkdir -p Arena
+mkdir -p BackupD
+
+function_bp() {
+
+source_dir=Arena
+backup_dir=BackupD
+timestamp=$(date '+%Y-%m-%d_%H-%M-%S')
+
+backup_name="backup_$timestamp".tar.gz
+
+tar -czf "$backup_dir/$backup_name" "$source_dir"
+
+echo "backed up into "$backup_name""
+
+cd $backup_dir
+
+ls -t | tail -n +4 | xargs rm -f
+
+}     
+
+
+function_cf() {
+    
+CONFIG_FILE=settings.conf
+    
+if [ ! -f  $CONFIG_FILE ]; then 
+    
+echo "this config file doesnt exist"
+
+else
+
+while IFS='=' read -r key value; do
+
+echo "key is $key , value is $value"
+
+done < "$CONFIG_FILE"
+
+fi
+
+}
+
+echo "choose from the options"
+
+echo "1) check disk space"
+
+echo "2) check system uptimes"
+
+echo "3) backup the Arena directory and keep the last 3 files"
+
+echo "4) Parse a configuration file settings.conf and display the values"
+
+read -rp "Enter your choice [1-4]:" choice
+
+case $choice in
+
+1)df -h Arena;;
+2)uptime -p;;
+3)function_bp;;
+4)function_cf;;
+*)echo "this option is invalid";;
+
+esac
